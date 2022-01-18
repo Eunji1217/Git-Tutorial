@@ -15,11 +15,11 @@ def sendEmail(addr):
         print("유효한 이메일 주소가 아닙니다.")
 
 message = EmailMessage()
-message.set_content("코드라이언 수업중입니다.")
+message.set_content("이은지 공부중입니다.")
 
 message["Subject"] = "이것은 제목입니다."
-message["From"] = "###@gmail.com"
-message["To"] = "###@gmail.com"
+message["From"] = "unji1361@gmail.com"
+message["To"] = "@gmail.com"
 
 with open("codelion.png","rb") as image:
     image_file = image.read()
@@ -28,7 +28,7 @@ image_type = imghdr.what('codelion',image_file)
 message.add_attachment(image_file,maintype='image',subtype=image_type)
 
 smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
-smtp.login("###@gmail.com","######")
-# 메일을 보내는 sendEmail 함수를 호출해서 실행해보기
+smtp.login("unji1361@gmail.com","")
+
 sendEmail("###gmailcom")
 smtp.quit()
